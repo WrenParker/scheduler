@@ -1,0 +1,44 @@
+.page-wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.event-wrapper {
+  position: relative;
+}
+
+.event {
+  border: 1px solid #aaaaaa;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color:black;
+}
+
+.bookmarked-event {
+  border: 1px solid #ffc107;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.event:hover {
+  border: 1px solid black;
+  border-radius: 3px;
+  position: relative;
+}
+
+.pop-up {
+  position: absolute;
+  max-width: 95%;
+  z-index: 1;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.time-slot {
+  border-right: 1px solid black;
+}
