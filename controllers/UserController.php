@@ -4,6 +4,7 @@
 class UserController
 {
 
+  // displays main user view in chronological order
   public static function showAllEvents()
   {
     $res = Event::getAllEvents();
@@ -13,16 +14,19 @@ class UserController
     include '../views/User.php';
   }
 
+  // shows individual event details
   public static function viewEvent($eventId)
   {
     $event = Event::getSingleEventDetails($eventId);
     $timeStamp = strtotime($event->start);
     $date = date("F j, Y", $timeStamp);
     $time = date("g:i a", $timeStamp);
+    $admin = false;
 
     include '../views/EventDetails.php';
   }
 
+  // swaps state of bookmark and returns to user view
   public static function toggleBookmark($id)
   {
     Event::toggleAttribuite($id, 'bookmarked');
@@ -30,6 +34,7 @@ class UserController
     header('Location: routes.php?action=viewUser');
   }
 
+  // increments shares counter and redirects user to appropriate social media platform
   public function shareEvent($platform, $url, $id)
   {
     Event::incrementEventAttribute($id, 'shares');

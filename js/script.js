@@ -21,6 +21,7 @@ function minimizeAll() {
   }
 }
 
+// adds another input field for a host on the create form
 function addHostField(value=null) {
   let hosts = document.getElementById('hosts');
   let newField = document.createElement('input');
@@ -36,10 +37,12 @@ function addHostField(value=null) {
   hosts.appendChild(document.createElement('br'))
 }
 
+// removes all of the hosts from the create form
 function clearHosts() {
   document.getElementById('hosts').innerHTML = "";
 }
 
+// adds all of the hosts of the input form as a comma delimted list on a single form
 function collectHosts() {
   let children = document.getElementById('hosts').children;
   let hosts = [];
@@ -51,6 +54,7 @@ function collectHosts() {
   document.getElementById('host-array').value = hosts;
 }
 
+// removes all events from create form
 function clearEvent() {
   document.getElementById('event-id').value = '';
   document.getElementById('event-name').value = '';
@@ -62,6 +66,7 @@ function clearEvent() {
   collectHosts();
 }
 
+// puts all details from an event into the create form. Updates on submit.
 function editEvent(event) {
   //attempt to toggle the text on the button and the form
   let createButton = document.getElementById('create-button');
@@ -71,7 +76,7 @@ function editEvent(event) {
   createButton.class = 'collapse row show';
 
 
-
+  // get rid of old data for good measure.
   clearEvent();
 
   document.getElementById('event-id').value = event.id;
@@ -85,8 +90,10 @@ function editEvent(event) {
 
   document.getElementById('event-start').value = tmpTime.toISOString().slice(0,16);
   document.getElementById('event-duration').value = event.duration
+
   for(let i=0; i<event.hosts.length; i++) {
     addHostField(event.hosts[i]);
   }
+  //important if the hosts are not edited.
   collectHosts();
 }

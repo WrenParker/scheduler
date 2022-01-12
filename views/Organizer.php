@@ -23,6 +23,7 @@
                   <div class="row mx-2 justify-content-between">
                     <div class="col mx-2">
                       <?php echo $event->name ?>
+                      <span class="disabled-event"><?php echo !$event->isActive ? "Currently Disabled*" : "" ?></span>
                     </div>
                     <div class="col-1 px-2 text-right">
                       <p><?php echo $event->clicks ?></p>

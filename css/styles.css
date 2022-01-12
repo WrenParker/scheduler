@@ -7,6 +7,10 @@
   position: relative;
 }
 
+.disabled-event {
+  color: red;
+}
+
 .event {
   border: 1px solid #aaaaaa;
   border-radius: 3px;

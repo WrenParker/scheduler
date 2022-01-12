@@ -36,16 +36,16 @@ switch ($_REQUEST['action']) {
 
   case 'restoreEvent':
     if($_POST['admin']==true)
-        AdminController::toggleEvent($_POST['id']);
+      AdminController::toggleEvent($_POST['id']);
     else
       OrganizerController::toggleEvent($_POST['id']);
-
     break;
 
   case 'viewEvent':
     UserController::viewEvent($_GET['id']);
     break;
 
+  // viewhome is default
   case 'viewHome':
   default:
     include '../views/Home.php';

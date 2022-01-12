@@ -59,6 +59,7 @@ class Event
       }
     }
 
+    // stdObject of all of the array attributes.
     return (object)['id'=>$eventRow['id'],
                     'name'=>$eventRow['name'],
                     'description'=>$eventRow['description'],
@@ -72,7 +73,8 @@ class Event
                     'hosts'=>$hosts];
   }
 
-  public function getDeletedEvents()
+  // returns list of disabled events
+  public function getDisabledEvents()
   {
     $conn = (new DatabaseConnection())->connect();
     $events = array();

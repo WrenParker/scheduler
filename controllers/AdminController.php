@@ -8,7 +8,7 @@ class AdminController
   {
     $res = Event::getAllEvents();
     $events = Event::buildEventJsonByDay($res);
-    $disabled = Event::getDeletedEvents();
+    $disabled = Event::getDisabledEvents();
 
     $admin = true;
     include '../views/Admin.php';
