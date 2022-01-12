@@ -13,6 +13,7 @@ class Event
     return $conn->query('SELECT * FROM `event` ORDER BY `start`');
   }
 
+  // receives queryResults, outputs json to be passed to the views
   public static function buildEventJsonByDay($queryResults)
   {
     $events = array();
@@ -38,18 +39,11 @@ class Event
     return $events;
   }
 
-  public function toggleBookmark($eventId)
+  // Swaps the state of the boolean attributes
+  public function toggleAttribuite($eventId, $attribute)
   {
     $conn = (new DatabaseConnection())->connect();
-    $statement = $conn->prepare('UPDATE `event` SET `bookmarked`=!bookmarked WHERE `id`=(?)');
-    $statement->bind_param('i', $eventId);
-    $statement->execute();
-  }
-
-  public function toggleEvent($eventId)
-  {
-    $conn = (new DatabaseConnection())->connect();
-    $statement = $conn->prepare('UPDATE `event` SET `isActive`=!isActive WHERE `id`=(?)');
+    $statement = $conn->prepare('UPDATE `event` SET ' . $attribute .'=!' . $attribute .' WHERE `id`=(?)');
     $statement->bind_param('i', $eventId);
     $statement->execute();
   }

@@ -34,7 +34,7 @@ class AdminController
   public static function toggleEvent($id)
   {
 
-    Event::toggleEvent($id);
+    Event::toggleAttribuite($id, 'isActive');
 
     header('Location: routes.php?action=viewAdmin');
   }

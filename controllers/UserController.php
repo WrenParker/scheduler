@@ -25,7 +25,7 @@ class UserController
 
   public static function toggleBookmark($id)
   {
-    Event::toggleBookmark($id);
+    Event::toggleAttribuite($id, 'bookmarked');
 
     header('Location: routes.php?action=viewUser');
   }
