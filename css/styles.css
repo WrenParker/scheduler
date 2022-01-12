@@ -25,6 +25,8 @@
   border-radius: 3px;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  color:black;
 }
 
 .event:hover {

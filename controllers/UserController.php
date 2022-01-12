@@ -9,6 +9,7 @@ class UserController
   {
     $res = Event::getAllEvents();
     $events = Event::buildEventJsonByDay($res);
+    $bookmarks = Event::getBookmarkedEvents();
     $admin = false;
 
     include '../views/User.php';

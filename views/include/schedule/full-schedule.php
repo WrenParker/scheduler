@@ -1,3 +1,5 @@
+<h2>All Events</h2>
+<hr>
 <?php
 if(!isset($events) || empty($events)) {
   echo "No Events Have Been Added!";

@@ -74,7 +74,7 @@ class Event
   }
 
   // returns list of disabled events
-  public function getDisabledEvents()
+  public static function getDisabledEvents()
   {
     $conn = (new DatabaseConnection())->connect();
     $events = array();
@@ -84,6 +84,17 @@ class Event
     }
     return $events;
 
+  }
+
+  public static function getBookmarkedEvents()
+  {
+    $conn = (new DatabaseConnection())->connect();
+    $events = array();
+    $queryResults = $conn->query('SELECT * FROM `event` WHERE `isActive`=true AND `bookmarked`=true');
+    while ($row = $queryResults->fetch_assoc()) {
+      array_push($events, Event::getEventObject($row));
+    }
+    return $events;
   }
 
   public static function getSingleEventDetails($eventId)
