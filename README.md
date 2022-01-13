@@ -9,7 +9,7 @@
  
 Here's a live version hosted on an EC2 instance:
 
-http://34.224.30.22/scheduler/
+http://34.224.30.22
 
 ## Additional Info 
 
