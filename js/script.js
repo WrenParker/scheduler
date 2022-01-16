@@ -75,12 +75,13 @@ function editEvent(event) {
   let createButton = document.getElementById('create-button');
   createButton.innerHTML = 'Hide';
 
+  createButton.scrollIntoView({
+    behavior: 'smooth',
+  })
+
   $('#create-form').collapse('show');
   let createform = document.getElementById('create-form');
 
-  createform.scrollIntoView({
-    behavior: 'smooth',
-  })
 
 
   // get rid of old data for good measure.
