@@ -43,7 +43,7 @@ class Event
   public function toggleAttribuite($eventId, $attribute)
   {
     $conn = (new DatabaseConnection())->connect();
-    $statement = $conn->prepare('UPDATE `event` SET ' . $attribute .'=!' . $attribute .' WHERE `id`=(?)');
+    $statement = $conn->prepare('UPDATE `event` SET ' . $attribute . ' = !' . $attribute . ' WHERE `id`=?');
     $statement->bind_param('i', $eventId);
     $statement->execute();
   }
