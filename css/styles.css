@@ -37,7 +37,7 @@
 
 .pop-up {
   position: absolute;
-  max-width: 95%;
+  min-width: 25vw;
   z-index: 1;
   background-color: white;
   border: 1px solid black;
@@ -47,4 +47,8 @@
 
 .time-slot {
   border-right: 1px solid black;
+}
+
+.event-location {
+  color: #888888;
 }

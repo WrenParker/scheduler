@@ -11,7 +11,7 @@
       <hr>
       <div class="row my-4">
         <?php foreach ($bookmarks as $bookmark): ?>
-          <div class="col-3">
+          <div class="text-center">
             <a href="routes.php?action=viewEvent&id=<?php echo $bookmark->id ?>">
               <div class="mt-1 mx-1 mb-0 p-2 bookmark bookmarked-event">
                 <div class="row mx-2 justify-content-between">
