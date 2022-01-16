@@ -9,7 +9,7 @@
 
 ## Development Process
 
-This project was built using a LAMP stack and the MVC architectural pattern. A constraint I put on myself was to use minimal frameworks outside of the languages themselves. I opted to use Bootstrap 4 for rapid UI development, but everything else was done from scratch.
+This project was built using a LAMP stack and the MVC architectural pattern. A constraint I put on myself was to use minimal frameworks outside of the languages themselves. I opted to use Bootstrap 4 and Font Awesome for rapid UI development, but everything else was done from scratch.
 
 Languages used: PHP, HTML, CSS, Javascript, MySQL
 
