@@ -8,8 +8,16 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col">
-      <a href="routes.php?action=viewHome"><h1>Event Scheduler</h1></a>
-      <hr>
+      <h1>Event Scheduler</h1>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary m-1 <?php echo $_REQUEST['action'] == 'viewHome' ? "disabled": '' ?>" href="routes.php?action=viewHome">Home</a>
+      <a class="btn btn-primary m-1 <?php echo $_REQUEST['action'] == 'viewUser' ? "disabled": '' ?>" href="routes.php?action=viewUser">View User Page</a>
+      <a class="btn btn-primary m-1 <?php echo $_REQUEST['action'] == 'viewAdmin' ? "disabled": '' ?>" href="routes.php?action=viewAdmin">View Admin Page</a>
+      <a class="btn btn-primary m-1 <?php echo $_REQUEST['action'] == 'viewOrganizer' ? "disabled": '' ?>" href="routes.php?action=viewOrganizer">View Organizer Page</a>
+    </div>
+  </div>
+  <hr>
 </div>
