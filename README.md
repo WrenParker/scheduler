@@ -5,6 +5,7 @@
 - Clone project to apache document root (htdocs on xampp)
 - Import DDL script found in /sql/CREATE_EVENTS.sql into MySQL via CLI or phpmyadmin
 - Edit credentials and database info in /config/db.php to match local database instance
+- Note: Developed for php 7.3
 
 ## Development Process
 
