@@ -1,8 +1,18 @@
-<div onclick="togglePopup(this)" class="col-md-4 col-10 my-2 event-wrapper">
-  <div class="mt-1 mx-1 mb-0 p-2 <?php echo ($event->bookmarked == true && !$admin ? 'bookmarked-event' : 'event') ?>">
+<div onclick="togglePopup(this)" class="my-2 mx-2 event-wrapper">
+  <div class="mt-1 mx-1 mb-0 py-2 px-4 text-center text-decoration-underline <?php echo ($event->bookmarked == true && !$admin ? 'bookmarked-event' : 'event') ?>">
     <?php echo $event->name ?>
+      <?php if ($event->hosts[0]!==''): ?>
+      <i class="event-location"> -
+      <?php for ($i=0; $i<count($event->hosts); $i++): ?>
+         <?php
+          echo $event->hosts[$i];
+          echo (count($event->hosts) !== $i+1) ? "," : "";
+         ?>
+      <?php endfor; ?>
+      </i>
+      <?php endif; ?>
   </div>
-  <div style="display:none;" class="mt-1 mx-1 mb-1 p-2 w-100 pop-up">
+  <div style="display:none;" class="mt-1 mx-1 mb-1 p-2 pop-up">
     <?php if ($event->hosts[0]!==''): ?>
     <p>Hosts:
     <?php for ($i=0; $i<count($event->hosts); $i++): ?>
@@ -18,7 +28,7 @@
     <p>Duration: <?php echo $event->duration . ($event->duration == '1' ? ' Minute' : ' Minutes') ?></p>
     <?php if ($admin): ?>
       <div class="d-flex">
-        <button onclick='editEvent(<?php echo json_encode($event) ?>)' class="btn btn-warning mr-1" type="button" data-toggle="collapse" data-target="#create-form">
+        <button onclick='editEvent(<?php echo json_encode($event) ?>)' class="btn btn-warning mr-1" type="button" data-toggle="collapse show" data-target="#create-form">
           Edit Event
         </button>
 

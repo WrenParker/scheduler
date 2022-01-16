@@ -10,6 +10,9 @@ function togglePopup(e) {
 
   // popupStartedOn will make sure that if the same node is clicked twice, it will disappear.
   popup.style.display == 'block' || popupStartedOn ? popup.style.display = 'none' : popup.style.display = 'block';
+  popup.scrollIntoView({
+    behavior: 'smooth'
+  })
 }
 
 
@@ -72,8 +75,12 @@ function editEvent(event) {
   let createButton = document.getElementById('create-button');
   createButton.innerHTML = 'Hide';
 
+  $('#create-form').collapse('show');
   let createform = document.getElementById('create-form');
-  createButton.class = 'collapse row show';
+
+  createform.scrollIntoView({
+    behavior: 'smooth',
+  })
 
 
   // get rid of old data for good measure.
