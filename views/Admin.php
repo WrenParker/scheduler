@@ -3,14 +3,14 @@
   <body>
     <?php include 'include/header.php'; ?>
     <div class="container">
-      <div class="row mb-2">
+      <div class="row mb-4">
         <div class="col">
           <button id="create-button" onclick="this.innerHTML !== 'Hide' ? this.innerHTML = 'Hide' : this.innerHTML = 'Create Event'" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#create-form">
             Create Event
           </button>
         </div>
       </div>
-      <div id="create-form" class="collapse row">
+      <div id="create-form" class="collapse row mb-4">
         <div class="col-8">
           <form class="" action="../controllers/routes.php?action=createEvent" method="post">
             <input type="hidden" id="event-id" name="id">
