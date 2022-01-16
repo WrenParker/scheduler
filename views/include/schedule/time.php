@@ -1,7 +1,7 @@
 <div class="row mt-3">
   <div class="col">
     <div class="row py-2">
-      <div class="col-2 mr-1 pt-2 time-slot text-right">
+      <div class="col-12 col-sm-2 mr-1 pt-2 time-slot">
         <?php echo $time ?>
       </div>
       <div class="col">
