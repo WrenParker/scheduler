@@ -20,7 +20,7 @@
           <p>Location: <?php echo $event->location ?></p>
           <p>Date: <?php echo $date ?></p>
           <p>Start Time: <?php echo $time ?></p>
-          <p>Duration <?php echo $event->duration . ($event->duration == '1' ? ' Minute' : ' Minutes') ?></p>
+          <p>Duration: <?php echo $event->duration . ($event->duration == '1' ? ' Minute' : ' Minutes') ?></p>
         </div>
       </div>
       Share: <a href="routes.php?action=share&url=<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]" ?>&platform=email&id=<?php echo $event->id ?>">Email</a>
